@@ -1,5 +1,5 @@
 # Terraform
-<img align="centre" alt="devops" width=400 height=200 src="Images/terraform.jpg"> <br>
+<img align="centre" alt="terraform" width=400 height=200 src="Images/terraform.jpg"> <br>
 
 <h2> Pre-requisite </h2>
 
