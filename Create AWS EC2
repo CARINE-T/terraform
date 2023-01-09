@@ -1,13 +1,3 @@
------------------------------------- Install aws cli ------------------------------------- 
-
-----> curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-
-----> sudo apt install unzip
-
-----> unzip awscliv2.zip
-
-----> sudo ./aws/install
-
 --------------------- Create a file -------------------------
 
 ----> sudo nano main.tf
@@ -42,7 +32,7 @@ resource "aws_instance" "app_server" {
 
 # --------------------------- END ----------------------------
 
-We can directly add credential & config --> Go to --> cd .aws --> ls  
+------------> We can directly add credential & config --> Go to --> cd .aws --> ls  
 
 --> credentials in credential file
 [default]
@@ -52,6 +42,17 @@ aws_secret_access_key =
 --> region in config file
 [default]
 region = 
+
+resource "aws_instance" "Instance_01" {
+  ami             = "ami-0b5eea76982371e91"
+  instance_type   = "t2.micro"
+  subnet_id       = aws_subnet.<resource_name>.id
+  security_groups = [aws_security_group.<resource_name>.id]
+  key_name        = "key_pair_name"
+  tags = {
+    "name" = "My-Instance"
+  }
+}
 
 
 
