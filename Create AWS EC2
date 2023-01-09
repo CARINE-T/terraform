@@ -43,7 +43,7 @@ aws_secret_access_key =
 [default]
 region = 
 
-resource "aws_instance" "Instance_01" {
+resource "aws_instance" "<custom_name>" {
   ami             = "ami-0b5eea76982371e91"
   instance_type   = "t2.micro"
   subnet_id       = aws_subnet.<resource_name>.id
