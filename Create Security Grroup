@@ -1,0 +1,11 @@
+resource "aws_security_group" "web_sg" {
+  name        = "http_ssh_sg"
+  description = "http and ssh allowed into ec2 instances"
+  vpc_id      = aws_vpc.<resource_name>.id
+  #Allow SSH access.
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] 
+  }
